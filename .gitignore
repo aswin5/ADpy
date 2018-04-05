@@ -61,3 +61,6 @@ typings/
 
 # dist files 
 dist/
+
+# imdone config
+.imdone

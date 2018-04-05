@@ -2,11 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-console.log('viva la vida')
+
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/viva.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'server/static'),
     filename: "bundle.js"
   },
   devtool: 'inline-source-map',
