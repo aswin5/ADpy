@@ -6,6 +6,26 @@ const path = require('path');
 let webpack = require('webpack');
 const routes = require('./routes');
 let app = express();
+// VIA: something to do
+// TODO:0 refactor this piece of code
+// var mongoose = require('mongoose');
+// var passport = require('passport');
+// var flash    = require('connect-flash');
+//
+// var morgan       = require('morgan');
+// var cookieParser = require('cookie-parser');
+// var bodyParser   = require('body-parser');
+// var session      = require('express-session');
+//
+// var configDB = require('./config/database');
+// mongoose.connect(configDB.url); // connect to our database
+// app.use(morgan('dev')); // log every request to the console
+// app.use(cookieParser()); // read cookies (needed for auth)
+// app.use(bodyParser()); // get information from html forms
+// app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+// app.use(passport.initialize());
+// app.use(passport.session()); // persistent login sessions
+// app.use(flash()); // use connect-flash for flash messages stored in session
 
 // I will have to get the js compiled using webpack and serve it with index.js
 // as js bundle
@@ -33,7 +53,7 @@ app.get('/', (req, res)=>{
 
 
 app.use('/static', express.static(path.join(__dirname, 'static')));
-// app.use(routes);
+app.use(routes);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

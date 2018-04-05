@@ -16,6 +16,11 @@ module.exports = {
   devtool: 'inline-source-map',
   module: {
     rules: [{
+        test: /\.css$/,
+        include: /node_modules/,
+        loaders: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.ejs$/,
         loader: 'ejs-loader?variable=data'
       },
@@ -25,7 +30,7 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
-            presets: [ "es2015", "react"]
+            presets: ["es2015", "react"]
           }
         }]
       }
